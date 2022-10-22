@@ -2,14 +2,15 @@
   "name": "middle.messenger.praktikum.yandex",
   "version": "1.0.0",
   "description": "---",
-  "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
+    "@parcel/transformer-pug": "^2.7.0",
     "express": "^4.18.2",
     "parcel": "^2.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build index.pug",
+    "serve": "parcel serve index.pug",
+    "start": "node backend/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/shmykovandrey/middle.messenger.praktikum.yandex/issues"
   },
-  "homepage": "https://github.com/shmykovandrey/middle.messenger.praktikum.yandex#readme"
+  "homepage": "https://github.com/shmykovandrey/middle.messenger.praktikum.yandex#readme",
+  "engines" : { 
+    "node" : ">=12.0.0"
+  }
 }
