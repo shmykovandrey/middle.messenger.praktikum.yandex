@@ -1,0 +1,17 @@
+@import "../../styles/base/constants";
+
+.page404__content {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @extend %center-block;
+}
+
+.page404__text {
+  & h1 {
+    margin-bottom: 20px;
+  }
+}

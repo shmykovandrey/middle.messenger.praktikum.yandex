@@ -1,0 +1,19 @@
+doctype html
+html(lang="ru") 
+  head
+    title Login
+    link(rel="stylesheet" href=" ../../styles/index.scss")
+    link(rel="stylesheet" href="style.scss")
+  body
+    .wrapper.login__wrapper
+      .content.login__content
+        h1.login__title Вход
+        form.login__form
+          p.login__user Логин
+          input.input__user(type="text" name="login")
+          p.login__password Пароль
+          input.input__password(type="password" name="password")
+        .login__btn-conteiner
+          button.btn.auth__button Авторизоваться
+          a.login__link(href='../registration/registration.pug') Нет аккаунта?
+        
