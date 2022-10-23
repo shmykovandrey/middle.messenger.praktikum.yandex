@@ -1,0 +1,81 @@
+.profile__wrapper {
+  display: flex;
+}
+
+.back__section {
+  width: 64px;
+  height: 100vh;
+  background-color: #fbfbfb;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.profile__container {
+  width: 1216px;
+  height: 100vh;
+  background-color: #fff;
+}
+.user__container {
+  padding-top: 50px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.avatar__img {
+  width: 150px;
+  height: 150px;
+  background-image: url("../../../static/icons/no-avatar.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.avatar__icon {
+  margin: 0;
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-data__container {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-end;
+  & input {
+    width: 500px;
+  }
+  & input::placeholder {
+    text-align: right;
+  }
+  & div {
+    width: 700px;
+  }
+}
+
+.change__container {
+  display: flex;
+  flex-direction: column;
+  & .logout {
+    color: red;
+  }
+  & a {
+    margin: 10px auto;
+  }
+}
+
+.save__edit {
+  width: 280px;
+  height: 37px;
+  background: #3369f3;
+  border-radius: 8px;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+}

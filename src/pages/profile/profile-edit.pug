@@ -17,24 +17,23 @@ body
           form.user-data__container
             .user__mail
               label Почта
-              input(type="mail" placeholder="pochta@yandex.ru" disabled=true)
+              input(type="mail" placeholder="pochta@yandex.ru" disabled=false name="email")
             .user__login
               label Логин
-              input(type="text" placeholder="ivanivanov" disabled=true)
+              input(type="text" placeholder="ivanivanov" disabled=false name="login")
             .user__name
               label Имя
-              input(type="text" placeholder="Иван" disabled=true) 
+              input(type="text" placeholder="Иван" disabled=false name="first_name")
             .user__last-name
               label Фамилия
-              input(type="text" placeholder="Иванов" disabled=true) 
+              input(type="text" placeholder="Иванов" disabled=false name="second_name")
             .user__chat-name
               label Имя в чате
-              input(type="text" placeholder="Иван" disabled=true) 
+              input(type="text" placeholder="Иван" disabled=false name="display_name")
             .user-phone
               label Телефон
-              input(type="text" placeholder="+7 (909) 967 30 30" disabled=true)
-          .change__container 
-            a(href="./profile-edit.pug").change__data Изменить данные
-            a(href="#").change__password Изменить пароль
-            a(href="../login/login.pug").logout Выйти 
+              input(type="phone" placeholder="+7 (909) 967 30 30" disabled=false name="phone")
+          a(href="./profile.pug")
+            button.save__edit.btn Сохранить
+            
 

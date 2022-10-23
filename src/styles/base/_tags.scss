@@ -3,6 +3,10 @@ a {
   color: $base-color;
 }
 
+body {
+  background-color: #f2f2f2;
+}
+
 input {
   all: unset;
   border-bottom: 1px solid $base-color;
