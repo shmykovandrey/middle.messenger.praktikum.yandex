@@ -1,10 +1,122 @@
+include ../../includes/mixins.pug
 doctype html 
-head 
-  title Main page 
-  link(rel="stylesheet" href=" ../../styles/index.scss")
-  link(rel="stylesheet" href="style.scss")
++head-tag('Main page')
 body
+  main
     .wrapper.main__wrapper
-      .chats__cointainer 
+      .chats__cointainer
+        .profile-and-search
+          a(href="../profile/profile.pug") Профиль >
+          +pug-input('text','Поиск',false,'search').serch-input
+        .chats-list
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2          
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2
+          .chat
+            .avatar
+              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            .chat-info 
+              span.chat-user Андрей
+              span.chat-last-msg Вы: привет
+            .chat-system 
+              span.chat-time 10:49
+              .chat-unread-msg 2       
       .chat__room
+        .name-and-setting
+          .user__avatar-and-name 
+            img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            span Вадим
+          img(src="../../../static/icons/dots.svg", alt="dots").dots
+        .chat-messages
+          .system-message.message
+            p 19 июня
+          .my-friend-message.message 
+            p
+              | Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
+              | Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
+          .my-message.message
+            p Круто!
+        .send-message
+          img(src="../../../static/icons/attach.svg", alt="attach")
+          +pug-input('text','Сообщение',false,'message')
+          img(src="../../../static/icons/send_btn.svg", alt="send_message")
+
       

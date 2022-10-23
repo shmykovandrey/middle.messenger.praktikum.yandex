@@ -10,8 +10,8 @@
   },
   "scripts": {
     "build": "parcel build src/index.pug",
-    "serve": "parcel serve src/index.pug",
-    "start": "node backend/index.js"
+    "start": "parcel serve src/index.pug --port 3000",
+    "serve": "node backend/index.js"
   },
   "repository": {
     "type": "git",
