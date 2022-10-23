@@ -1,16 +1,12 @@
 @import "../../styles/base/constants";
 
 .page500__content {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  @extend %flex-column-space_between;
   @extend %center-block;
 }
 
 .page500__text {
+  @extend %flex-column-space_between;
   & h1 {
     margin-bottom: 20px;
   }

@@ -1,16 +1,22 @@
+include includes/mixins.pug
 doctype html
 html(lang='ru')
-  include includes/head.pug
+  head(title = 'Мой мессенджер')
+  link(rel="stylesheet" href="style.scss")
   body
-    h1 Сыылки на все страницы. Main - это страница чатов, пока заглушка.
-    a(href='./pages/login/login.pug').link Login
-    br
-    a(href='./pages/registration/registration.pug').link Registration
-    br
-    a(href='./pages/main/main.pug').link Main
-    br
-    a(href='./pages/profile/profile.pug').link Profile
-    br
-    a(href='./pages/page404/page404.pug').link Page 404
-    br
-    a(href='./pages/page500/page500.pug').link Page 500
+    main
+      h1 Сыылки на все страницы. Вместо чатов пока заглушка.
+      nav 
+        ul 
+          li
+            a(href='./pages/login/login.pug').link Страница Login
+          li
+            a(href='./pages/registration/registration.pug').link Страница Регистрации
+          li
+            a(href='./pages/main/main.pug').link Страница чата. Пока заглушка
+          li
+            a(href='./pages/profile/profile.pug').link Страница профиля
+          li
+            a(href='./pages/page404/page404.pug').link Страница ошибки 404
+          li
+            a(href='./pages/page500/page500.pug').link Страница 500

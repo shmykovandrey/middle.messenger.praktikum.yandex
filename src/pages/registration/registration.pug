@@ -1,29 +1,27 @@
+include ../../includes/mixins.pug
 doctype html
 html(lang="ru") 
-  head
-    title Registration
-    link(rel="stylesheet" href=" ../../styles/index.scss")
-    link(rel="stylesheet" href="style.scss")
+  +head-tag('Регистрация')
   body
-    .wrapper.login__wrapper
-      .content.login__content
-        h1.login__title Регистрация
-        form.login__form
-          p.form__email Почта
-          input.input__email(type="mail" name="email")
-          p.form__login Логин
-          input.input__login(type="text" name="login")
-          p.form__name Имя
-          input.input__name(type="text" name="first_name")
-          p.form__name-last Фамилия
-          input.input__name-last(type="text" name="last_name")
-          p.form__phone Телефон
-          input.input__phone(type="phone" name="phone")
-          p.form__password Пароль
-          input.input__password(type="password" name="password")
-          p.form__password-re Повторите пароль
-          input.input__password-re(type="password" name="password")
-        .login__btn-conteiner
-          button.btn.auth__button Зарегистрироваться
-          a.login__link(href='../login/login.pug') Войти
-        
+    main
+      .wrapper.login__wrapper
+        .content.login__content
+          h1.login__title Регистрация
+          form.login__form
+            label(for='email') Почта
+            +pug-input('mail', '', false, 'email')
+            label(for='login') Логин
+            +pug-input('text', '', false, 'login')
+            label(for='first_name') Имя
+            +pug-input('text', '', false, 'first_name')
+            label(for='last_name') Фамилия
+            +pug-input('text', '', false, 'last_name')
+            label(for='phone') Телефон
+            +pug-input('phone', '', false, 'phone')
+            label(for='password') Пароль
+            +pug-input('password', '', false, 'password')
+            label(for='password-re') Повторите пароль
+            +pug-input('password', '', false, 'password-re')
+            button(type='submit').btn.auth__button Зарегистрироваться
+            a.login__link(href='../login/login.pug') Войти
+          
