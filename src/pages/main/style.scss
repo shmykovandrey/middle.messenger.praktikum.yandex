@@ -106,14 +106,14 @@
 }
 
 .my-friend-message {
-  text-align: left;
+  text-align: justify;
   width: 100%;
 }
 
 .my-message {
   width: 100%;
   & p {
-    text-align: right;
+    text-align: justify;
     margin-left: auto;
     margin-right: 0;
   }
