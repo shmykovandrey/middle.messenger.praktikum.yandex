@@ -9,7 +9,7 @@
     "parcel": "^2.7.0"
   },
   "scripts": {
-    "build": "parcel build src/index.pug",
+    "build": "parcel build src/index.pug --no-cache",
     "start": "parcel serve src/index.pug --port 3000",
     "serve": "node backend/index.js"
   },
