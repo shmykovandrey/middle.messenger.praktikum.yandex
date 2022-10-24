@@ -1,3 +1,9 @@
+-var avatars = ["../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg","../../../static/icons/test_ava.jpg"]
+-var names = ["Андрей","Вадим","Диман","Костян","Вика","Надя","Саша","Женя","Лол","Начальник"]
+-var messages = ["Тут?","Вы: привет","Вы: пока","..печатает","Изображение","Сколько стоит?","Вы: да ничего так","Вы: Уже все","Вы: Готово!","Что за?"]
+-var postDate = ["10:49","10:49","10:49","10:49","10:49","10:49","10:49","10:49","10:49","10:49"]
+-var unreadCount = ["2","1","","","","","","","","33"]
+
 include ../../includes/mixins.pug
 doctype html 
 +head-tag('Main page')
@@ -9,114 +15,26 @@ body
           a(href="../profile/profile.pug") Профиль >
           +pug-input('text','Поиск',false,'search').serch-input
         .chats-list
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2          
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2
-          .chat
-            .avatar
-              img(src="../../../static/icons/test_ava.jpg", alt="avatar")
-            .chat-info 
-              span.chat-user Андрей
-              span.chat-last-msg Вы: привет
-            .chat-system 
-              span.chat-time 10:49
-              .chat-unread-msg 2       
+          each val in [0,1,2,3,4,5,6,7,8,9]
+            +chat-message(avatars[val], names[val], messages[val], postDate[val], unreadCount[val])
       .chat__room
         .name-and-setting
           .user__avatar-and-name 
-            img(src="../../../static/icons/test_ava.jpg", alt="avatar")
+            img(src="../../../static/icons/test_ava.jpg" alt="avatar")
             span Вадим
-          img(src="../../../static/icons/dots.svg", alt="dots").dots
+          img(src="../../../static/icons/dots.svg" alt="dots").dots
         .chat-messages
           .system-message.message
             p 19 июня
           .my-friend-message.message 
             p
-              | Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
-              | Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
+              |Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
+              br
+              |Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
           .my-message.message
-            p Круто!
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ratione maxime modi dicta, dolores nemo voluptatem illum ut, vero ducimus delectus similique dolorem ipsa hic. Beatae molestias repellat perferendis quam.
         .send-message
-          img(src="../../../static/icons/attach.svg", alt="attach")
+          img(src="../../../static/icons/attach.svg" alt="attach")
           +pug-input('text','Сообщение',false,'message')
-          img(src="../../../static/icons/send_btn.svg", alt="send_message")
+          img(src="../../../static/icons/send_btn.svg" alt="send_message")
 
-      
