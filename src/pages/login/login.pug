@@ -1,0 +1,18 @@
+include ../../includes/mixins.pug
+doctype html
+html(lang="ru") 
+  +head-tag('Логин')
+  body
+    main
+      .wrapper.login__wrapper
+        .content.login__content
+          h1.login__title Вход
+          form.login__form
+            label(for='login') Логин
+            +pug-input('text', '', false, 'login')
+            label(for='passowrd') Пароль
+            +pug-input('password', '', false, 'password')
+            button(type='submit').btn.auth__button Авторизоваться
+          .login__btn-conteiner
+            a.login__link(href='../registration/registration.pug') Нет аккаунта?
+          

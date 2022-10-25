@@ -1,0 +1,13 @@
+@import "../../styles/base/constants";
+
+.page500__content {
+  @extend %flex-column-space_between;
+  @extend %center-block;
+}
+
+.page500__text {
+  @extend %flex-column-space_between;
+  & h1 {
+    margin-bottom: 20px;
+  }
+}

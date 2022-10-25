@@ -1,0 +1,37 @@
+include ../../includes/mixins.pug
+doctype html 
++head-tag('Profile')
+body
+  main
+    .wrapper.profile__wrapper
+      a(href='../../index.pug')
+        button.back__section(type='button')
+          img.back__img(src="../../../static/icons/back.png", alt="back")
+      .profile__container
+        .user__container 
+          .avatar__img
+            img(src="../../../static/icons/Union.png", alt="avatar").avatar__icon
+          .user__name
+            h2 Иван
+          form.user-data__container
+            label(for='email') Почта
+              +pug-input("mail", "pochta@yandex.ru",true,'email')
+            label(for='login') Логин
+              +pug-input("text", "ivanivanov",true,'login')
+            label(for='first_name') Имя
+              +pug-input("text", "Иван",true,'first_name') 
+            label(for='second_name') Фамилия
+              +pug-input("text", "Иванов",true,'second_name') 
+            label(for='display_name') Имя в чате
+              +pug-input("text", "Иван",true,'display_name')
+            label(for='phone') Телефон
+              +pug-input("phone", "+7 (909) 967 30 30",true,'phone')
+          .change__container
+            ul
+              li
+                a(href="./profile-edit.pug").change__data Изменить данные
+              li
+                a(href="#").change__password Изменить пароль
+              li
+                a(href="../login/login.pug").logout Выйти 
+

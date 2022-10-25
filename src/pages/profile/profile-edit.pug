@@ -1,0 +1,32 @@
+include ../../includes/mixins.pug
+doctype html 
++head-tag('Profile-edit')
+body
+  main
+    .wrapper.profile__wrapper
+      a(href='../../index.pug')
+        button.back__section(type='button')
+          img.back__img(src="../../../static/icons/back.png", alt="back")
+      .profile__container
+        .user__container 
+          .avatar__img
+            img(src="../../../static/icons/Union.png", alt="avatar").avatar__icon
+          .user__name
+            h2 Иван
+          form.user-data__container
+            label(for='email') Почта
+              +pug-input("mail", "pochta@yandex.ru",false,'email')
+            label(for='login') Логин
+              +pug-input("text", "ivanivanov",false,'login')
+            label(for='first_name') Имя
+              +pug-input("text", "Иван",false,'first_name') 
+            label(for='second_name') Фамилия
+              +pug-input("text", "Иванов",false,'second_name') 
+            label(for='display_name') Имя в чате
+              +pug-input("text", "Иван",false,'display_name')
+            label(for='phone') Телефон
+              +pug-input("phone", "+7 (909) 967 30 30",false,'phone')
+            a(href="./profile.pug")
+              button.btn.save-user-data(type='button') Сохранить
+            
+
