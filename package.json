@@ -5,13 +5,19 @@
   "devDependencies": {
     "@parcel/transformer-pug": "^2.7.0",
     "@parcel/transformer-sass": "^2.7.0",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
     "express": "^4.18.2",
-    "parcel": "^2.7.0"
+    "parcel": "^2.7.0",
+    "typescript": "^4.8.4"
   },
   "scripts": {
     "build": "parcel build src/index.pug --no-cache",
     "start": "parcel serve src/index.pug --port 3000",
-    "serve": "node backend/index.js"
+    "serve": "node backend/index.js",
+    "lint": "eslint src/index.ts"
   },
   "repository": {
     "type": "git",
