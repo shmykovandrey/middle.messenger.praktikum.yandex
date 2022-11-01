@@ -2,9 +2,11 @@ type Listeners = {
   [index: string]: string[];
 };
 
-interface IEventBus {
+export interface IEventBus {
   listneners: Listeners;
   on: (event: string, callback: () => void) => void;
+  emit: (event: string, [number]) => void;
+  off: (event: string, callback: () => void) => void;
 }
 
 export default class EventBus implements IEventBus {
