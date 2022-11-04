@@ -1,4 +1,7 @@
-class Block {
+import EventBus from './eventBus';
+import pug from 'pug';
+
+export default class Component {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -7,6 +10,7 @@ class Block {
   };
 
   _element = null;
+
   _meta = null;
 
   /** JSDoc
@@ -27,14 +31,14 @@ class Block {
     this.eventBus = () => eventBus;
 
     this._registerEvents(eventBus);
-    eventBus.emit(Block.EVENTS.INIT);
+    eventBus.emit(Component.EVENTS.INIT);
   }
 
   _registerEvents(eventBus) {
-    eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
-    eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
-    eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
-    eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
+    eventBus.on(Component.EVENTS.INIT, this.init.bind(this));
+    eventBus.on(Component.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
+    eventBus.on(Component.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
+    eventBus.on(Component.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
   _createResources() {
@@ -44,7 +48,7 @@ class Block {
 
   init() {
     this._createResources();
-    this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
+    this.eventBus().emit(Component.EVENTS.FLOW_RENDER);
   }
 
   _componentDidMount() {
@@ -58,6 +62,10 @@ class Block {
 
   _componentDidUpdate(oldProps, newProps) {
     const response = this.componentDidUpdate(oldProps, newProps);
+    if (!response) {
+      return;
+    }
+    this._render();
   }
 
   // Может переопределять пользователь, необязательно трогать
@@ -69,11 +77,12 @@ class Block {
     if (!nextProps) {
       return;
     }
-    let oldProps = this.props;
-    console.log(oldProps);
+    // console.log(this.props);
+    // console.log(nextProps);
+    const oldProps = this.props;
     Object.assign(this.props, nextProps);
-    console.log(this.props);
-    this.eventBus().emit(Block.EVENTS.FLOW_CDU, oldProps, nextProps);
+    // console.log(this.props);
+    this.eventBus().emit(Component.EVENTS.FLOW_CDU, oldProps, nextProps);
   };
 
   get element() {
@@ -82,12 +91,15 @@ class Block {
 
   _render() {
     const block = this.render();
-    console.log(block);
     // Этот небезопасный метод для упрощения логики
     // Используйте шаблонизатор из npm или напишите свой безопасный
     // Нужно не в строку компилировать (или делать это правильно),
     // либо сразу в DOM-элементы возвращать из compile DOM-ноду
     this._element.innerHTML = block;
+  }
+
+  compile(template) {
+    return pug.compile(template)(this.props);
   }
 
   // Может переопределять пользователь, необязательно трогать

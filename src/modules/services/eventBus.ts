@@ -27,8 +27,6 @@ export default class EventBus implements IEventBus {
     if (!this.listneners[event]) {
       throw new Error(`Нет такого эвента ${event}`);
     }
-    // console.log(event);
-    // console.log(...args);
     this.listneners[event].forEach((listener) => listener(...args));
   }
 
