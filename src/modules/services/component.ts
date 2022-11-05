@@ -1,5 +1,7 @@
-import EventBus from './eventBus';
 import pug from 'pug';
+import EventBus from './eventBus';
+
+type Meta = { tagName: string; props: {} };
 
 export default class Component {
   static EVENTS = {
@@ -9,16 +11,10 @@ export default class Component {
     FLOW_RENDER: 'flow:render',
   };
 
-  _element = null;
+  _element: null | Meta = null;
 
   _meta = null;
 
-  /** JSDoc
-   * @param {string} tagName
-   * @param {Object} props
-   *
-   * @returns {void}
-   */
   constructor(tagName = 'div', props = {}) {
     const eventBus = new EventBus();
     this._meta = {

@@ -1,10 +1,4 @@
-import { isThisTypeNode } from 'typescript';
 import EventBus from './eventBus';
-// import { IEventBus } from './eventBus';
-
-// interface IBlock {
-//   eventBus?: () => IEventBus;
-// }
 
 export default class Block {
   static EVENTS = {

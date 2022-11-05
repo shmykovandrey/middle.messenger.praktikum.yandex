@@ -5,7 +5,6 @@ import {} from './style.scss';
 export default class Button extends Component {
   render() {
     console.log('Button render');
-    console.log('Button render');
     return super.compile(template);
   }
 }
