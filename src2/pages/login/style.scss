@@ -1,0 +1,11 @@
+@import "../../styles/base/constants";
+
+.login__content {
+  width: 340px;
+  height: 450px;
+  @extend %flex-column-space_evenly;
+  @extend %center-block;
+  background: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
+}
