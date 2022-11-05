@@ -1,4 +1,4 @@
-import Component from '../services/component';
+import Component from '../../services/component';
 import template from './template';
 import {} from './style.scss';
 
